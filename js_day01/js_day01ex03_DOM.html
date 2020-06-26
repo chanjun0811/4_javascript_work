@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.button {
+            position: absolute;
+            background: violet;
+            color: yellow;
+            /*box-shadow: 3px 3px 3px black;*/
+            transition: box-shadow 0.5s, background-color 1s;
+        }
+    </style>
+    <script>
+        // DOM : Document Object Model(문서 객체 모델)
+        function mouseOverAction() {
+            // 자바스크립트 내장 객체인 document(문서에서 사용하고 있는 모든 요소의 참조값이 들어와 있다.)를 통해서 요소 접근
+            var btn = document.querySelector('div.button');
+            //btn에 dom이 저장 되었는지 확인
+            //console.log(btn);
+
+            btn.style.boxShadow="3px 3px 3px black";
+        }
+        function mouseOutAction() {
+            var btn = document.querySelector('div.button');
+            // 변수를 선언 할 때 var를 붙이면 지역변수, 안 붙이면 전역변수(window객체)
+            btn.style.boxShadow="";
+        }
+    </script>
+</head>
+<body>
+
+<h3>마우스를 올려 보세요</h3>
+<hr>
+<!-- 자바스크립트 코드 작성 : 인라인, 인터널, 익스터널 모두 가능 -->
+<div class="button"
+     onmouseout="mouseOutAction()"
+     onmouseover="mouseOverAction()">나는 버튼이다</div>
+</body>
+</html>

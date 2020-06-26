@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var car1 = "Saab";
+    var car2 = "Volvo";
+    var car3 = "BMW";
+
+    // 따로 선언된 변수들을 배열처럼 사용하기.
+    document.write(window.car1 + "<br>");
+    document.write(this.car1 + "<br>");
+    //연관배열 형식(Map구조의 key처럼 사용)
+    document.write("window['car1'] => " + window['car1'] + "<br>");
+    document.write("this['car'+ 1] => " + this['car' + 1] + "<br>");
+    document.write("<hr>");
+
+    for(var i=1; i<=3; i++){
+        document.write("this['car'+"+i+"] => ", this['car'+i] + "<br>");
+    }
+</script>
+
+</body>
+</html>

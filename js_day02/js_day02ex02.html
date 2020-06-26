@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>moment라이브러리 활용</h3>
+<hr>
+<!--moment 라이브러리 불러오기-->
+<script src="../js/moment.js"></script>
+<script src="../js/moment-with-locales.js"></script>
+<script>
+    var now = moment();
+    now.add(100, 'day');
+    var str = now.format("YYYY-MM-DD");
+    document.write(str);
+</script>
+</body>
+</html>

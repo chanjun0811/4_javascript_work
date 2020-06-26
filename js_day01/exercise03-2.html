@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>document.write()로 표만들기</h3>
+<hr>
+<script>
+    document.write("<table border='1'>")
+
+    document.write("<tr><th>n</th>")
+    for(var j=0; j<=9; j++){
+        document.write("<td>"+j+"</td>")
+    }
+    document.write("</tr>")
+
+    document.write("<tr><th>n<sup>2</sup></th>")
+    for(var j=0; j<=9; j++){
+        document.write("<td>"+j*j+"</td>")
+    }
+    document.write("</tr>")
+
+    document.write("</table>")
+</script>
+</body>
+</html>
+
+
+
+<!--<script>-->
+<!--    document.write("<table border='1'>")-->
+<!--    for(var i=0; i<2; i++) {-->
+<!--        if(i==0){-->
+<!--            document.write("<tr><th>n</th>")-->
+<!--        }-->
+<!--        else if (i==1){-->
+<!--            document.write("<tr><th>n<sup>2</sup></th>")-->
+<!--        }-->
+
+<!--        for(var j=0; j<=9; j++){-->
+<!--            if(i==0){-->
+<!--                document.write("<td>"+j+"</td>")-->
+<!--            } else if(i==1){-->
+<!--                document.write("<td>"+j*j+"</td>")-->
+<!--            }-->
+<!--        }-->
+<!--        document.write("</tr>")-->
+<!--    }-->
+<!--    document.write("</table>")-->
+<!--</script>-->

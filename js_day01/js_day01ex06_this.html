@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var x = 100;
+    y = 200;
+
+    function abc() {
+        var a = 1000; // abc함수 내에서만 사용하는 a
+        //window.b에 2000 대입.
+        b = 2000; // 전역변수
+        console.log(this == window);
+        console.log(this.x);
+        console.log(window.x);
+        console.log(this.y);
+        console.log(window.y);
+        console.log(a);
+    }
+
+    function bbb() {
+        //window.b가 된다.
+        console.log(" bbb에서 b호출 : " + b);
+        console.dir(window);
+    }
+
+    abc();
+    bbb();
+
+
+</script>
+
+</body>
+</html>

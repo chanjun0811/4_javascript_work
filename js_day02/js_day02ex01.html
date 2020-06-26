@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 문서가 모두 불러와지면 실행
+        window.onload = function () {
+            var timeOfDay = document.getElementById('timeOfDay');
+            //console.log(timeOfDay);
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var day = today.getDate();
+
+            //timeOfDay.innerText = today.toString();
+            // timeOfDay.innerText = today.getFullYear() + "년" + (today.getMonth()+1) + "월";
+            timeOfDay.innerText = year + "년" + month + "월" + day + "일";
+        };
+
+    </script>
+</head>
+<body>
+
+<h3>객체 생성 및 활용</h3>
+<hr>
+<p>현재시간 : <span id="timeOfDay"></span></p>
+
+</body>
+</html>

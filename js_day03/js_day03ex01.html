@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center;
+        }
+        td:hover {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<h1>짝맞추기 게임</h1>
+<hr>
+<table id="puzzle" border="1" width="400" height="400">
+    <tr>
+        <td width="100">.</td>
+        <td width="100">.</td>
+        <td width="100">.</td>
+        <td width="100">.</td>
+    </tr>
+    <tr>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+    </tr>
+    <tr>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+    </tr>
+    <tr>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+    </tr>
+</table>
+<p id="timer">5초 후에 게임 시작!</p>
+
+<script>
+    var cells = document.getElementById('puzzle').getElementsByTagName("td");
+    var timer = document.getElementById("timer");
+    function init() {
+        for(var i=0; i<cells.length; ) {
+            var index = Math.floor(Math.random()*16);
+            if(cells[index].innerText == '.') {
+                var ch = String.fromCharCode(i%8+65);
+                cells[index].innerText = ch;
+                cells[index].word = ch;
+                i++;
+            }
+        }
+        // 5호 후에 감추기
+        var sec = 5;
+        // 반복 호출
+        var interval = setInterval(function() {
+            sec--;
+            timer.innerText = sec + "초 후에 게임 시작!";
+            if(sec == 0) {
+                clearInterval(interval);
+            }
+        }, 1000);
+        // 한번만 호출
+        setTimeout(start, 2000);
+    }
+
+
+    function start() {
+        for(var i=0; i<cells.length; i++) {
+            cells[i].innerText = " ";
+            cells[i].onclick = function() {
+                this.innerText = this.word;
+            };
+        }
+
+        timer.innerText = 'START GAME!!';
+        //console.dir(cells);
+    }
+
+    init();
+</script>
+</body>
+</html>
